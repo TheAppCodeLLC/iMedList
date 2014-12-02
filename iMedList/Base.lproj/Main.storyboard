@@ -1,25 +1,259 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iiA-Bk-6GC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Tab Bar Controller-->
+        <scene sceneID="WQg-bp-NLm">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                <tabBarController id="iiA-Bk-6GC" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="kZT-us-JHj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="wPH-tW-oCk" kind="relationship" relationship="viewControllers" id="dQz-zz-P6b"/>
+                        <segue destination="NrR-We-6hF" kind="relationship" relationship="viewControllers" id="bOQ-Xe-lB8"/>
+                        <segue destination="noI-QD-iFk" kind="relationship" relationship="viewControllers" id="aA1-PW-v6p"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TGd-LV-1qH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="-425"/>
+        </scene>
+        <!--Med List Table View Controller-->
+        <scene sceneID="sWj-N4-dyv">
+            <objects>
+                <tableViewController id="Gfm-Sy-alu" customClass="MedListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Kqe-XL-h5O">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medCell" id="tuQ-09-1Tt">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tuQ-09-1Tt" id="Z0E-7z-Yiz">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="iZU-qk-b1i" kind="showDetail" id="dMp-4i-LAw"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Gfm-Sy-alu" id="FcW-DA-3QL"/>
+                            <outlet property="delegate" destination="Gfm-Sy-alu" id="pR0-bS-9xL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="5ch-Gi-VWj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6kd-oG-ygM">
+                            <connections>
+                                <segue destination="PY2-Sp-L3f" kind="show" id="cJR-nE-aft"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UJp-vi-N2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1790" y="-1095"/>
+        </scene>
+        <!--Edit Med View Controller-->
+        <scene sceneID="N91-xt-GsN">
+            <objects>
+                <viewController id="iZU-qk-b1i" customClass="EditMedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NVE-M4-rnd"/>
+                        <viewControllerLayoutGuide type="bottom" id="w1W-IZ-0l8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L8N-YH-9sJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaq-be-YfV">
+                                <rect key="frame" x="277" y="266" width="46" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackMedListTableView:" destination="iZU-qk-b1i" eventType="touchUpInside" id="pgO-DY-PA5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7HO-WZ-zX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2424" y="-1093"/>
+        </scene>
+        <!--Add Med View Controller-->
+        <scene sceneID="oRe-TE-ZMV">
+            <objects>
+                <viewController id="PY2-Sp-L3f" customClass="AddMedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GbN-Wx-Odb"/>
+                        <viewControllerLayoutGuide type="bottom" id="jbG-fL-xgg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nii-dh-xBU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWc-5u-HGK">
+                                <rect key="frame" x="215" y="316" width="171" height="30"/>
+                                <state key="normal" title="Choose from a list">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="eZ3-ix-X8w" kind="presentation" id="rVL-J0-OPe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZa-Tw-htR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2426" y="-1731"/>
+        </scene>
+        <!--Med Picker View Controller-->
+        <scene sceneID="OIz-1x-LwI">
+            <objects>
+                <viewController id="eZ3-ix-X8w" customClass="MedPickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dAU-FX-eCL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lyg-GN-LSc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lGs-gR-CfT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvA-PE-hDi">
+                                <rect key="frame" x="287" y="285" width="46" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackToAddMedView:" destination="eZ3-ix-X8w" eventType="touchUpInside" id="07s-Bw-xcT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wSv-Ld-N7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3070" y="-1731"/>
+        </scene>
+        <!--Reminders Table View Controller-->
+        <scene sceneID="fRU-Zj-gLx">
+            <objects>
+                <tableViewController id="3rV-PO-28u" customClass="RemindersTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IOY-qP-xOI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reminderCell" id="6ow-1j-kpX">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6ow-1j-kpX" id="EAl-O6-jbB">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3rV-PO-28u" id="WIf-KM-X0y"/>
+                            <outlet property="delegate" destination="3rV-PO-28u" id="uho-aJ-sXy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="feD-ku-VXM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tez-Dd-s7S">
+                            <connections>
+                                <segue destination="ETW-OQ-SdO" kind="show" id="XA0-nG-j2U"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="091-Vs-2Ka" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1790" y="-425"/>
+        </scene>
+        <!--Add Reminder View Controller-->
+        <scene sceneID="79i-5Q-hVA">
+            <objects>
+                <viewController id="ETW-OQ-SdO" customClass="AddReminderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qkI-vm-6sj"/>
+                        <viewControllerLayoutGuide type="bottom" id="pXr-L9-Qv2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fIb-d1-JZi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wRV-21-kdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2426" y="-425"/>
+        </scene>
+        <!--Meds-->
+        <scene sceneID="b3S-en-mip">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wPH-tW-oCk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Meds" id="7rd-P7-7xu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JfO-3M-A2J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gfm-Sy-alu" kind="relationship" relationship="rootViewController" id="2i3-qG-xMg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QrD-5j-ih2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="978" y="-1095"/>
+        </scene>
+        <!--Reminders-->
+        <scene sceneID="P52-k4-NFq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NrR-We-6hF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Reminders" id="KbS-1s-9Ms"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="04e-lD-Efs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3rV-PO-28u" kind="relationship" relationship="rootViewController" id="S1i-Cu-dZY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P40-jc-vtm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="978" y="-425"/>
+        </scene>
+        <!--Email-->
+        <scene sceneID="Sa1-hG-Ag6">
+            <objects>
+                <viewController id="noI-QD-iFk" customClass="EmailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zCY-wC-xNp"/>
+                        <viewControllerLayoutGuide type="bottom" id="RHE-V3-sKb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qfQ-4h-dsZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Email" id="T7Y-GZ-Ebf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2w-0L-FuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="978" y="253"/>
         </scene>
     </scenes>
 </document>

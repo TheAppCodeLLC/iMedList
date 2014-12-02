@@ -15,6 +15,13 @@
 		AEA4B4461A2E4E40000AB0D5 /* iMedList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEA4B4391A2E4E40000AB0D5 /* iMedList.xcdatamodeld */; };
 		AEA4B4471A2E4E40000AB0D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA4B43D1A2E4E40000AB0D5 /* AppDelegate.m */; };
 		AEA4B4481A2E4E40000AB0D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA4B43E1A2E4E40000AB0D5 /* main.m */; };
+		AEB1C7401A2E542E00B631B7 /* MedListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB1C73F1A2E542E00B631B7 /* MedListTableViewController.m */; };
+		AEB1C7431A2E54A900B631B7 /* RemindersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB1C7421A2E54A900B631B7 /* RemindersTableViewController.m */; };
+		AEB1C7461A2E559600B631B7 /* EmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB1C7451A2E559600B631B7 /* EmailViewController.m */; };
+		AEB1C7491A2E567800B631B7 /* AddMedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB1C7481A2E567800B631B7 /* AddMedViewController.m */; };
+		AEB1C74C1A2E574E00B631B7 /* MedPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB1C74B1A2E574E00B631B7 /* MedPickerViewController.m */; };
+		AEB1C74F1A2E580100B631B7 /* EditMedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB1C74E1A2E580100B631B7 /* EditMedViewController.m */; };
+		AEB1C7521A2E585F00B631B7 /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB1C7511A2E585F00B631B7 /* AddReminderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,20 @@
 		AEA4B43C1A2E4E40000AB0D5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AEA4B43D1A2E4E40000AB0D5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AEA4B43E1A2E4E40000AB0D5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AEB1C73E1A2E542E00B631B7 /* MedListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedListTableViewController.h; sourceTree = "<group>"; };
+		AEB1C73F1A2E542E00B631B7 /* MedListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedListTableViewController.m; sourceTree = "<group>"; };
+		AEB1C7411A2E54A900B631B7 /* RemindersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindersTableViewController.h; sourceTree = "<group>"; };
+		AEB1C7421A2E54A900B631B7 /* RemindersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindersTableViewController.m; sourceTree = "<group>"; };
+		AEB1C7441A2E559600B631B7 /* EmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailViewController.h; sourceTree = "<group>"; };
+		AEB1C7451A2E559600B631B7 /* EmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailViewController.m; sourceTree = "<group>"; };
+		AEB1C7471A2E567800B631B7 /* AddMedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMedViewController.h; sourceTree = "<group>"; };
+		AEB1C7481A2E567800B631B7 /* AddMedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMedViewController.m; sourceTree = "<group>"; };
+		AEB1C74A1A2E574E00B631B7 /* MedPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedPickerViewController.h; sourceTree = "<group>"; };
+		AEB1C74B1A2E574E00B631B7 /* MedPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedPickerViewController.m; sourceTree = "<group>"; };
+		AEB1C74D1A2E580100B631B7 /* EditMedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMedViewController.h; sourceTree = "<group>"; };
+		AEB1C74E1A2E580100B631B7 /* EditMedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMedViewController.m; sourceTree = "<group>"; };
+		AEB1C7501A2E585F00B631B7 /* AddReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReminderViewController.h; sourceTree = "<group>"; };
+		AEB1C7511A2E585F00B631B7 /* AddReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReminderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +134,20 @@
 		AEA4B4351A2E4E40000AB0D5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AEB1C73E1A2E542E00B631B7 /* MedListTableViewController.h */,
+				AEB1C73F1A2E542E00B631B7 /* MedListTableViewController.m */,
+				AEB1C7411A2E54A900B631B7 /* RemindersTableViewController.h */,
+				AEB1C7421A2E54A900B631B7 /* RemindersTableViewController.m */,
+				AEB1C7441A2E559600B631B7 /* EmailViewController.h */,
+				AEB1C7451A2E559600B631B7 /* EmailViewController.m */,
+				AEB1C7471A2E567800B631B7 /* AddMedViewController.h */,
+				AEB1C7481A2E567800B631B7 /* AddMedViewController.m */,
+				AEB1C74A1A2E574E00B631B7 /* MedPickerViewController.h */,
+				AEB1C74B1A2E574E00B631B7 /* MedPickerViewController.m */,
+				AEB1C74D1A2E580100B631B7 /* EditMedViewController.h */,
+				AEB1C74E1A2E580100B631B7 /* EditMedViewController.m */,
+				AEB1C7501A2E585F00B631B7 /* AddReminderViewController.h */,
+				AEB1C7511A2E585F00B631B7 /* AddReminderViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,9 +278,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB1C7521A2E585F00B631B7 /* AddReminderViewController.m in Sources */,
+				AEB1C7431A2E54A900B631B7 /* RemindersTableViewController.m in Sources */,
+				AEB1C7491A2E567800B631B7 /* AddMedViewController.m in Sources */,
+				AEB1C74F1A2E580100B631B7 /* EditMedViewController.m in Sources */,
+				AEB1C7401A2E542E00B631B7 /* MedListTableViewController.m in Sources */,
 				AEA4B4471A2E4E40000AB0D5 /* AppDelegate.m in Sources */,
+				AEB1C7461A2E559600B631B7 /* EmailViewController.m in Sources */,
 				AEA4B4481A2E4E40000AB0D5 /* main.m in Sources */,
 				AEA4B4461A2E4E40000AB0D5 /* iMedList.xcdatamodeld in Sources */,
+				AEB1C74C1A2E574E00B631B7 /* MedPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +478,7 @@
 				AEA4B42C1A2E4C04000AB0D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEA4B42D1A2E4C04000AB0D5 /* Build configuration list for PBXNativeTarget "iMedListTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +487,7 @@
 				AEA4B42F1A2E4C04000AB0D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
