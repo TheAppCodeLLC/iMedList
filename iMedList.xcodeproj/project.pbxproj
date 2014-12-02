@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AEA4B40A1A2E4C04000AB0D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA4B4091A2E4C04000AB0D5 /* main.m */; };
+		AEA4B40D1A2E4C04000AB0D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA4B40C1A2E4C04000AB0D5 /* AppDelegate.m */; };
+		AEA4B4101A2E4C04000AB0D5 /* iMedList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEA4B40E1A2E4C04000AB0D5 /* iMedList.xcdatamodeld */; };
+		AEA4B4131A2E4C04000AB0D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA4B4121A2E4C04000AB0D5 /* ViewController.m */; };
+		AEA4B4161A2E4C04000AB0D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEA4B4141A2E4C04000AB0D5 /* Main.storyboard */; };
+		AEA4B4181A2E4C04000AB0D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEA4B4171A2E4C04000AB0D5 /* Images.xcassets */; };
+		AEA4B41B1A2E4C04000AB0D5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA4B4191A2E4C04000AB0D5 /* LaunchScreen.xib */; };
+		AEA4B4271A2E4C04000AB0D5 /* iMedListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA4B4261A2E4C04000AB0D5 /* iMedListTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AEA4B4211A2E4C04000AB0D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEA4B3FC1A2E4C04000AB0D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEA4B4031A2E4C04000AB0D5;
+			remoteInfo = iMedList;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AEA4B4041A2E4C04000AB0D5 /* iMedList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMedList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEA4B4081A2E4C04000AB0D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEA4B4091A2E4C04000AB0D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AEA4B40B1A2E4C04000AB0D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AEA4B40C1A2E4C04000AB0D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AEA4B40F1A2E4C04000AB0D5 /* iMedList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iMedList.xcdatamodel; sourceTree = "<group>"; };
+		AEA4B4111A2E4C04000AB0D5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AEA4B4121A2E4C04000AB0D5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AEA4B4151A2E4C04000AB0D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AEA4B4171A2E4C04000AB0D5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AEA4B41A1A2E4C04000AB0D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		AEA4B4201A2E4C04000AB0D5 /* iMedListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMedListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEA4B4251A2E4C04000AB0D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEA4B4261A2E4C04000AB0D5 /* iMedListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iMedListTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AEA4B4011A2E4C04000AB0D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEA4B41D1A2E4C04000AB0D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AEA4B3FB1A2E4C04000AB0D5 = {
+			isa = PBXGroup;
+			children = (
+				AEA4B4061A2E4C04000AB0D5 /* iMedList */,
+				AEA4B4231A2E4C04000AB0D5 /* iMedListTests */,
+				AEA4B4051A2E4C04000AB0D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AEA4B4051A2E4C04000AB0D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEA4B4041A2E4C04000AB0D5 /* iMedList.app */,
+				AEA4B4201A2E4C04000AB0D5 /* iMedListTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEA4B4061A2E4C04000AB0D5 /* iMedList */ = {
+			isa = PBXGroup;
+			children = (
+				AEA4B40B1A2E4C04000AB0D5 /* AppDelegate.h */,
+				AEA4B40C1A2E4C04000AB0D5 /* AppDelegate.m */,
+				AEA4B4111A2E4C04000AB0D5 /* ViewController.h */,
+				AEA4B4121A2E4C04000AB0D5 /* ViewController.m */,
+				AEA4B4141A2E4C04000AB0D5 /* Main.storyboard */,
+				AEA4B4171A2E4C04000AB0D5 /* Images.xcassets */,
+				AEA4B4191A2E4C04000AB0D5 /* LaunchScreen.xib */,
+				AEA4B40E1A2E4C04000AB0D5 /* iMedList.xcdatamodeld */,
+				AEA4B4071A2E4C04000AB0D5 /* Supporting Files */,
+			);
+			path = iMedList;
+			sourceTree = "<group>";
+		};
+		AEA4B4071A2E4C04000AB0D5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEA4B4081A2E4C04000AB0D5 /* Info.plist */,
+				AEA4B4091A2E4C04000AB0D5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AEA4B4231A2E4C04000AB0D5 /* iMedListTests */ = {
+			isa = PBXGroup;
+			children = (
+				AEA4B4261A2E4C04000AB0D5 /* iMedListTests.m */,
+				AEA4B4241A2E4C04000AB0D5 /* Supporting Files */,
+			);
+			path = iMedListTests;
+			sourceTree = "<group>";
+		};
+		AEA4B4241A2E4C04000AB0D5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEA4B4251A2E4C04000AB0D5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AEA4B4031A2E4C04000AB0D5 /* iMedList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEA4B42A1A2E4C04000AB0D5 /* Build configuration list for PBXNativeTarget "iMedList" */;
+			buildPhases = (
+				AEA4B4001A2E4C04000AB0D5 /* Sources */,
+				AEA4B4011A2E4C04000AB0D5 /* Frameworks */,
+				AEA4B4021A2E4C04000AB0D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iMedList;
+			productName = iMedList;
+			productReference = AEA4B4041A2E4C04000AB0D5 /* iMedList.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AEA4B41F1A2E4C04000AB0D5 /* iMedListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEA4B42D1A2E4C04000AB0D5 /* Build configuration list for PBXNativeTarget "iMedListTests" */;
+			buildPhases = (
+				AEA4B41C1A2E4C04000AB0D5 /* Sources */,
+				AEA4B41D1A2E4C04000AB0D5 /* Frameworks */,
+				AEA4B41E1A2E4C04000AB0D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEA4B4221A2E4C04000AB0D5 /* PBXTargetDependency */,
+			);
+			name = iMedListTests;
+			productName = iMedListTests;
+			productReference = AEA4B4201A2E4C04000AB0D5 /* iMedListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AEA4B3FC1A2E4C04000AB0D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = TheAppCodeLLC;
+				TargetAttributes = {
+					AEA4B4031A2E4C04000AB0D5 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					AEA4B41F1A2E4C04000AB0D5 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = AEA4B4031A2E4C04000AB0D5;
+					};
+				};
+			};
+			buildConfigurationList = AEA4B3FF1A2E4C04000AB0D5 /* Build configuration list for PBXProject "iMedList" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AEA4B3FB1A2E4C04000AB0D5;
+			productRefGroup = AEA4B4051A2E4C04000AB0D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AEA4B4031A2E4C04000AB0D5 /* iMedList */,
+				AEA4B41F1A2E4C04000AB0D5 /* iMedListTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AEA4B4021A2E4C04000AB0D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEA4B4161A2E4C04000AB0D5 /* Main.storyboard in Resources */,
+				AEA4B41B1A2E4C04000AB0D5 /* LaunchScreen.xib in Resources */,
+				AEA4B4181A2E4C04000AB0D5 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEA4B41E1A2E4C04000AB0D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AEA4B4001A2E4C04000AB0D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEA4B4101A2E4C04000AB0D5 /* iMedList.xcdatamodeld in Sources */,
+				AEA4B40D1A2E4C04000AB0D5 /* AppDelegate.m in Sources */,
+				AEA4B4131A2E4C04000AB0D5 /* ViewController.m in Sources */,
+				AEA4B40A1A2E4C04000AB0D5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEA4B41C1A2E4C04000AB0D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEA4B4271A2E4C04000AB0D5 /* iMedListTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AEA4B4221A2E4C04000AB0D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEA4B4031A2E4C04000AB0D5 /* iMedList */;
+			targetProxy = AEA4B4211A2E4C04000AB0D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AEA4B4141A2E4C04000AB0D5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEA4B4151A2E4C04000AB0D5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AEA4B4191A2E4C04000AB0D5 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEA4B41A1A2E4C04000AB0D5 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AEA4B4281A2E4C04000AB0D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AEA4B4291A2E4C04000AB0D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AEA4B42B1A2E4C04000AB0D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iMedList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AEA4B42C1A2E4C04000AB0D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iMedList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AEA4B42E1A2E4C04000AB0D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iMedListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iMedList.app/iMedList";
+			};
+			name = Debug;
+		};
+		AEA4B42F1A2E4C04000AB0D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iMedListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iMedList.app/iMedList";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AEA4B3FF1A2E4C04000AB0D5 /* Build configuration list for PBXProject "iMedList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEA4B4281A2E4C04000AB0D5 /* Debug */,
+				AEA4B4291A2E4C04000AB0D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEA4B42A1A2E4C04000AB0D5 /* Build configuration list for PBXNativeTarget "iMedList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEA4B42B1A2E4C04000AB0D5 /* Debug */,
+				AEA4B42C1A2E4C04000AB0D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AEA4B42D1A2E4C04000AB0D5 /* Build configuration list for PBXNativeTarget "iMedListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEA4B42E1A2E4C04000AB0D5 /* Debug */,
+				AEA4B42F1A2E4C04000AB0D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AEA4B40E1A2E4C04000AB0D5 /* iMedList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AEA4B40F1A2E4C04000AB0D5 /* iMedList.xcdatamodel */,
+			);
+			currentVersion = AEA4B40F1A2E4C04000AB0D5 /* iMedList.xcdatamodel */;
+			path = iMedList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AEA4B3FC1A2E4C04000AB0D5 /* Project object */;
+}
