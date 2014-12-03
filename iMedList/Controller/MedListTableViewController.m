@@ -9,6 +9,7 @@
 #import "MedListTableViewController.h"
 #import "AddMedViewController.h"
 #import "Med.h"
+#import "EditMedViewController.h"
 
 @interface MedListTableViewController ()
 @property (nonatomic, strong) Med *med;
@@ -154,17 +155,28 @@
 }
 */
 
-/*
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+    // check to see if want to delete
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        // get the med we want to delete using the indexPath
+        _med  = [_fetchedResultsController objectAtIndexPath:indexPath];
+        
+        // set the med to delete
+        [self.managedObjectContext deleteObject:_med];
+        NSError *error;
+        
+        // call save to perform the delete
+        if (![self.managedObjectContext save:&error])
+        {
+            NSLog(@"Problem deleting destination: %@", [error localizedDescription]);
+        }
+    }
 }
-*/
 
 /*
 // Override to support rearranging the table view.
@@ -185,6 +197,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     NSString *segueIdentifier = [segue identifier];
@@ -193,6 +206,13 @@
         AddMedViewController *addMedViewController = [segue destinationViewController];
         addMedViewController.managedObjectContext = self.managedObjectContext;
     }
-}
+    else if ([segueIdentifier isEqualToString:@"medDetail"]) // This can be defined via Interface Builder
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        _med  = [_fetchedResultsController objectAtIndexPath:indexPath];
+        EditMedViewController *editMedViewController = [segue destinationViewController];
+        editMedViewController.managedObjectContext = self.managedObjectContext;
+        editMedViewController.medDetail = _med;
+    }}
 
 @end
