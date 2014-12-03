@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "MedListTableViewController.h"
+#import "RemindersTableViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -17,8 +20,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Get the root window (UITabBarController)
+    UITabBarController *rootViewController = (UITabBarController *)self.window.rootViewController;
+    
+    
+    // Get the second item of the UITabBarController
+    UINavigationController *navigationController = [[rootViewController viewControllers] objectAtIndex:0];
+    
+    // Get the first item of the UINavigationController (ItemsTableViewController)
+    MedListTableViewController *medListTableViewController = [[navigationController viewControllers] objectAtIndex:0];
+    medListTableViewController.managedObjectContext = self.managedObjectContext;
+    
+    
+    // Get the third item of the UITabBarController (again ItemsTableViewController)
+    navigationController = [[rootViewController viewControllers] objectAtIndex:1];
+    
+    // Get the first item of the UINavigationController (ItemsTableViewController)
+    RemindersTableViewController *reminderTableViewController = [[navigationController viewControllers] objectAtIndex:0];
+    reminderTableViewController.managedObjectContext = self.managedObjectContext;
+    
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

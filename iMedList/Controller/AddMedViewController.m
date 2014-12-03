@@ -9,19 +9,43 @@
 #import "AddMedViewController.h"
 
 @interface AddMedViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *medNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *medDoseTextField;
+@property (weak, nonatomic) IBOutlet UITextField *medFrequencyTextField;
+@property (weak, nonatomic) IBOutlet UITextField *medNotesTextField;
 @end
 
 @implementation AddMedViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)saveMed:(id)sender
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+    // create instance on NSManagedObect for Med
+    NSManagedObject	*med = [NSEntityDescription insertNewObjectForEntityForName:@"Med" inManagedObjectContext:_managedObjectContext];
+    [med setValue:self.medNameTextField.text forKey:@"name"];
+    [med setValue:self.medDoseTextField.text forKey:@"dose"];
+    [med setValue:self.medFrequencyTextField.text forKey:@"frequency"];
+    [med setValue:self.medNotesTextField.text forKey:@"notes"];
+    NSError *error;
+    
+    // here’s where the actual save happens, and if it doesn’t we print something out to the console
+    if (![_managedObjectContext save:&error])
+    {
+        NSLog(@"Problem saving: %@", [error localizedDescription]);
+    }
 }
 
 /*
