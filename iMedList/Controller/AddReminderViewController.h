@@ -10,4 +10,6 @@
 
 @interface AddReminderViewController : UIViewController
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end

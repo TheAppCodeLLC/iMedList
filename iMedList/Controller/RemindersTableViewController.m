@@ -7,6 +7,7 @@
 //
 
 #import "RemindersTableViewController.h"
+#import "AddReminderViewController.h"
 
 @interface RemindersTableViewController ()
 
@@ -83,14 +84,19 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the segue identifier
+    NSString *segueIdentifier = [segue identifier];
+    if ([segueIdentifier isEqualToString:@"addReminder"]) // This matches what we set it to in Interface Builder
+    {
+        // Get the new view controller using [segue destinationViewController].
+        AddReminderViewController *addReminderViewController = [segue destinationViewController];
+        // Pass the selected object to the new view controller.
+        addReminderViewController.managedObjectContext = self.managedObjectContext;
+    }
 }
-*/
 
 @end

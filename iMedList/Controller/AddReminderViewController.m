@@ -7,12 +7,23 @@
 //
 
 #import "AddReminderViewController.h"
+#import "Reminder.h"
+
 
 @interface AddReminderViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *customMessageTextField;
+@property (weak, nonatomic) IBOutlet UIDatePicker *notifDatePicker;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *frequencySegmentedControl;
+@property (nonatomic, strong) NSNumber *notifID;
+@property (nonatomic, strong) NSMutableDictionary *notifDict;
 @end
 
 @implementation AddReminderViewController
+
+bool allowNotif;
+bool allowsSound;
+bool allowsBadge;
+bool allowsAlert;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +33,121 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setNotificationTypesAllowed
+{
+    NSLog(@"%s:", __PRETTY_FUNCTION__);
+    // get the current notification settings
+    UIUserNotificationSettings *currentSettings = [[UIApplication sharedApplication] currentUserNotificationSettings];
+    allowNotif = (currentSettings.types != UIUserNotificationTypeNone);
+    allowsSound = (currentSettings.types & UIUserNotificationTypeSound) != 0;
+    allowsBadge = (currentSettings.types & UIUserNotificationTypeBadge) != 0;
+    allowsAlert = (currentSettings.types & UIUserNotificationTypeAlert) != 0;
+}
+
+- (IBAction)saveReminder:(id)sender
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [self setNotificationTypesAllowed];
+    
+    // New for iOS 8 - Register the notifications
+    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    if (notification)
+    {
+        if (allowNotif)
+        {
+            notification.fireDate = self.notifDatePicker.date;
+            notification.timeZone = [NSTimeZone defaultTimeZone];
+            switch (_frequencySegmentedControl.selectedSegmentIndex) {
+                case 0:
+                    notification.repeatInterval = NSCalendarUnitDay;
+                    break;
+                case 1:
+                    notification.repeatInterval = NSCalendarUnitWeekOfYear;
+                    break;
+                case 2:
+                    notification.repeatInterval = NSCalendarUnitYear;
+                    break;
+                default:
+                    notification.repeatInterval = 0;
+                    break;
+            }
+        }
+        if (allowsAlert)
+        {
+            notification.alertBody = self.customMessageTextField.text;
+        }
+        if (allowsBadge)
+        {
+            notification.applicationIconBadgeNumber = 1;
+        }
+        if (allowsSound)
+        {
+            notification.soundName = UILocalNotificationDefaultSoundName;
+        }
+        
+        // this will schedule the notification to fire at the fire date
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
+    
+    // this will schedule the notification to fire at the fire date
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+
+    //For development and debugging purposes only
+    // we're creating a string of the date so we can log the time the notif is supposed to fire
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MM-dd-yyy hh:mm"];
+    [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+    NSString *notifDate = [formatter stringFromDate:self.notifDatePicker.date];
+    NSLog(@"%s: fire time = %@", __PRETTY_FUNCTION__, notifDate);
+
+    [self saveReminderToCoreData];
+}
+
+- (IBAction)saveReminderToCoreData
+{
+    
+    NSLog(@"%s:", __PRETTY_FUNCTION__);
+    // get an instance of Reminder
+    Reminder *reminder = (Reminder *)[NSEntityDescription insertNewObjectForEntityForName:@"Reminder" inManagedObjectContext:_managedObjectContext];
+    //populate the reminder object
+    reminder.customMessage = self.customMessageTextField.text;
+    reminder.fireDate = self.notifDatePicker.date;
+    reminder.id = [NSNumber numberWithDouble:[self.notifDatePicker.date timeIntervalSinceReferenceDate]];
+    switch (_frequencySegmentedControl.selectedSegmentIndex)
+    {
+        case 0:
+            reminder.frequency = @"Daily";
+            break;
+        case 1:
+            reminder.frequency = @"Weekly";
+            break;
+        case 2:
+            reminder.frequency = @"Monthyly";
+            break;
+        default:
+            reminder.frequency = 0;
+            break;
+    }
+    
+    NSError *error;
+    
+    // here's where the actual save happens, and if it doesn't we print something out to the console
+    if (![_managedObjectContext save:&error])
+    {
+        NSLog(@"Problem saving: %@", [error localizedDescription]);
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
+                                                         message:@"Saving the reminder failed"
+                                                        delegate:self
+                                               cancelButtonTitle:@"ok"
+                                               otherButtonTitles: nil];
+        [alert show];
+    }
 }
 
 /*
