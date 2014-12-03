@@ -10,4 +10,6 @@
 
 @interface MedPickerViewController : UIViewController
 
+@property (nonatomic, strong) NSString *selectedMed;
+
 @end

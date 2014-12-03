@@ -24,6 +24,8 @@
 		AEB1C74C1A2E574E00B631B7 /* MedPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB1C74B1A2E574E00B631B7 /* MedPickerViewController.m */; };
 		AEB1C74F1A2E580100B631B7 /* EditMedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB1C74E1A2E580100B631B7 /* EditMedViewController.m */; };
 		AEB1C7521A2E585F00B631B7 /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB1C7511A2E585F00B631B7 /* AddReminderViewController.m */; };
+		AEC67EF11A2F4B4C00E74A6C /* iMedFullList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AEC67EF01A2F4B4C00E74A6C /* iMedFullList.sqlite */; };
+		AEC67EF31A2F4BF000E74A6C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC67EF21A2F4BF000E74A6C /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		AEB1C74E1A2E580100B631B7 /* EditMedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMedViewController.m; sourceTree = "<group>"; };
 		AEB1C7501A2E585F00B631B7 /* AddReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReminderViewController.h; sourceTree = "<group>"; };
 		AEB1C7511A2E585F00B631B7 /* AddReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReminderViewController.m; sourceTree = "<group>"; };
+		AEC67EF01A2F4B4C00E74A6C /* iMedFullList.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = iMedFullList.sqlite; sourceTree = "<group>"; };
+		AEC67EF21A2F4BF000E74A6C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC67EF31A2F4BF000E74A6C /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +95,7 @@
 		AEA4B3FB1A2E4C04000AB0D5 = {
 			isa = PBXGroup;
 			children = (
+				AEC67EF21A2F4BF000E74A6C /* libsqlite3.dylib */,
 				AEA4B4231A2E4C04000AB0D5 /* iMedListTests */,
 				AEA4B4051A2E4C04000AB0D5 /* Products */,
 				AEA4B4301A2E4E40000AB0D5 /* iMedList */,
@@ -161,6 +167,7 @@
 		AEA4B4381A2E4E40000AB0D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AEC67EF01A2F4B4C00E74A6C /* iMedFullList.sqlite */,
 				AEA4B4391A2E4E40000AB0D5 /* iMedList.xcdatamodeld */,
 				37989BAD1A2E990200095C94 /* Reminder.h */,
 				37989BAE1A2E990200095C94 /* Reminder.m */,
@@ -267,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC67EF11A2F4B4C00E74A6C /* iMedFullList.sqlite in Resources */,
 				AEA4B4451A2E4E40000AB0D5 /* Info.plist in Resources */,
 				AEA4B4441A2E4E40000AB0D5 /* Images.xcassets in Resources */,
 				AEA4B4421A2E4E40000AB0D5 /* LaunchScreen.xib in Resources */,

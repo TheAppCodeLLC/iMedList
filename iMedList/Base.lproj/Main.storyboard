@@ -159,6 +159,9 @@
                                         <state key="normal" title="Choose from a list">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="eZ3-ix-X8w" kind="presentation" id="LD7-f0-dWW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCB-NF-FGW">
                                         <rect key="frame" x="65" y="396" width="110" height="30"/>
@@ -197,8 +200,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3a-Pq-NJy">
+                                <rect key="frame" x="0.0" y="86" width="333" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="eZ3-ix-X8w" id="RDb-dr-lS9"/>
+                                    <outlet property="delegate" destination="eZ3-ix-X8w" id="RmS-vx-oqM"/>
+                                </connections>
+                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvA-PE-hDi">
-                                <rect key="frame" x="287" y="285" width="46" height="30"/>
+                                <rect key="frame" x="143" y="277" width="46" height="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

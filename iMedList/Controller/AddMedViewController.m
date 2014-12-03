@@ -7,6 +7,8 @@
 //
 
 #import "AddMedViewController.h"
+#import "MedPickerViewController.h"
+
 
 @interface AddMedViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *medNameTextField;
@@ -17,10 +19,20 @@
 
 @implementation AddMedViewController
 
+MedPickerViewController *pickerViewController;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (pickerViewController)
+    {
+        self.medNameTextField.text = pickerViewController.selectedMed;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,14 +60,15 @@
     }
 }
 
-/*
-#pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     // Get the new view controller using [segue destinationViewController].
+    if ([[segue destinationViewController] isKindOfClass:[MedPickerViewController class]])
+    {
+        pickerViewController = [segue destinationViewController];
+    }
     // Pass the selected object to the new view controller.
 }
-*/
 
 @end
