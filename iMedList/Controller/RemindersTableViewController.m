@@ -8,21 +8,23 @@
 
 #import "RemindersTableViewController.h"
 #import "AddReminderViewController.h"
+#import "Reminder.h"
 
 @interface RemindersTableViewController ()
-
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) Reminder *reminder;
 @end
 
 @implementation RemindersTableViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSError *error;
+    if (![[self fetchedResultsController] performFetch:&error])
+    {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,23 +32,97 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - fetchedResultsController
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+    // lazily instantiate our property
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    // Create an instance of a fetchRequest
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    //Create an instance of NSEntityDescription that references our Reminder entity.
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Reminder" inManagedObjectContext:self.managedObjectContext];
+    
+    // our fetch request needs an entity, so we set it with the one we just created
+    [fetchRequest setEntity:entity];
+    
+    // though not required, we can use a NSSortDescriptor to sort the results, we'll sort by id here.
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
+                              initWithKey:@"id" ascending:NO];
+    
+    // set the sort descriptor in the fetchRequest
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+    
+    // We tell the fetchRequest to return 20 items at a time, probably more than we will need for this app
+    // and not a requirement
+    [fetchRequest setFetchBatchSize:20];
+    
+    //And finally create the NSFetchedResultsController using our fetchRequest and managedObjectContext
+    NSFetchedResultsController *fetchedResultsController =
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                        managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil
+                                                   cacheName:@"Root"];
+    _fetchedResultsController = fetchedResultsController;
+    
+    // set the delegate to our self
+    _fetchedResultsController.delegate = self;
+    
+    return _fetchedResultsController;
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
+{
+    UITableView *tableView = self.tableView;
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:[NSArray
+                                               arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray
+                                               arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    self.reminder = [_fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = self.reminder.customMessage;
+}
+
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [[_fetchedResultsController sections] count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    return 3;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[[_fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reminderCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = @"Reminder";
+    [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 

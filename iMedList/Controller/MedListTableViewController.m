@@ -73,11 +73,17 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"medCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    _med  = [_fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = _med.name;
-    
+    // Configure the cell...
+    [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    self.med = [_fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = self.med.name;
+}
+
 
 #pragma mark FetchedResultsDelegate
 

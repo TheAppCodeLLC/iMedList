@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MedListTableViewController.h"
 #import "RemindersTableViewController.h"
+#import "EmailViewController.h"
 
 
 @interface AppDelegate ()
@@ -39,6 +40,11 @@
     // Get the first item of the UINavigationController (ItemsTableViewController)
     RemindersTableViewController *reminderTableViewController = [[navigationController viewControllers] objectAtIndex:0];
     reminderTableViewController.managedObjectContext = self.managedObjectContext;
+    
+    // Get the third tab controller from the tab bar itself since it does not use the navigation controller
+    EmailViewController *emailViewController = [[rootViewController viewControllers] objectAtIndex:2];
+    emailViewController.managedObjectContext = self.managedObjectContext;
+
     
     return YES;
 }
