@@ -56,6 +56,12 @@
     }
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField
+{
+    [theTextField resignFirstResponder];
+    return YES;
+}
+
 
 #pragma mark - Navigation
 

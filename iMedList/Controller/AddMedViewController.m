@@ -60,6 +60,12 @@ MedPickerViewController *pickerViewController;
     }
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField
+{
+    [theTextField resignFirstResponder];
+    return YES;
+}
+
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

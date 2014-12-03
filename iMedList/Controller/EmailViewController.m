@@ -118,6 +118,12 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField
+{
+    [theTextField resignFirstResponder];
+    return YES;
+}
+
 /*
 #pragma mark - Navigation
 

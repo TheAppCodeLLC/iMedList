@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3734832C1A2FC35B004BBFA4 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3734832B1A2FC35A004BBFA4 /* TPKeyboardAvoidingScrollView.m */; };
+		3734832F1A2FC469004BBFA4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3734832E1A2FC469004BBFA4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		37989BAC1A2E990100095C94 /* Med.m in Sources */ = {isa = PBXBuildFile; fileRef = 37989BAB1A2E990100095C94 /* Med.m */; };
 		37989BAF1A2E990200095C94 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 37989BAE1A2E990200095C94 /* Reminder.m */; };
 		AEA4B4271A2E4C04000AB0D5 /* iMedListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA4B4261A2E4C04000AB0D5 /* iMedListTests.m */; };
@@ -39,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3734832A1A2FC35A004BBFA4 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		3734832B1A2FC35A004BBFA4 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		3734832D1A2FC469004BBFA4 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		3734832E1A2FC469004BBFA4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		37989BAA1A2E990100095C94 /* Med.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Med.h; sourceTree = "<group>"; };
 		37989BAB1A2E990100095C94 /* Med.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Med.m; sourceTree = "<group>"; };
 		37989BAD1A2E990200095C94 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
@@ -185,6 +191,10 @@
 			children = (
 				AEA4B43C1A2E4E40000AB0D5 /* AppDelegate.h */,
 				AEA4B43D1A2E4E40000AB0D5 /* AppDelegate.m */,
+				3734832D1A2FC469004BBFA4 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				3734832E1A2FC469004BBFA4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				3734832A1A2FC35A004BBFA4 /* TPKeyboardAvoidingScrollView.h */,
+				3734832B1A2FC35A004BBFA4 /* TPKeyboardAvoidingScrollView.m */,
 				AEA4B43E1A2E4E40000AB0D5 /* main.m */,
 			);
 			path = Supporting_Files;
@@ -246,6 +256,7 @@
 				TargetAttributes = {
 					AEA4B4031A2E4C04000AB0D5 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = YYGJLW3VCQ;
 					};
 					AEA4B41F1A2E4C04000AB0D5 = {
 						CreatedOnToolsVersion = 6.1;
@@ -298,8 +309,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3734832C1A2FC35B004BBFA4 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				37989BAC1A2E990100095C94 /* Med.m in Sources */,
 				AEB1C7521A2E585F00B631B7 /* AddReminderViewController.m in Sources */,
+				3734832F1A2FC469004BBFA4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				AEB1C7431A2E54A900B631B7 /* RemindersTableViewController.m in Sources */,
 				AEB1C7491A2E567800B631B7 /* AddMedViewController.m in Sources */,
 				AEB1C74F1A2E580100B631B7 /* EditMedViewController.m in Sources */,
