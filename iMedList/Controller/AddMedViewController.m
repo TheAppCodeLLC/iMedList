@@ -58,6 +58,19 @@ MedPickerViewController *pickerViewController;
     {
         NSLog(@"Problem saving: %@", [error localizedDescription]);
     }
+    
+    [self clearFields];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) clearFields
+{
+    self.medNameTextField.text = @"";
+    self.medDoseTextField.text = @"";
+    self.medFrequencyTextField.text = @"";
+    self.medNotesTextField.text = @"";
+    pickerViewController.selectedMed = nil;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField

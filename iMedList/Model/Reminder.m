@@ -2,7 +2,7 @@
 //  Reminder.m
 //  iMedList
 //
-//  Created by kent franks on 12/2/14.
+//  Created by Kent Franks on 12/4/14.
 //  Copyright (c) 2014 TheAppCodeLLC. All rights reserved.
 //
 

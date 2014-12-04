@@ -2,7 +2,7 @@
 //  Reminder.h
 //  iMedList
 //
-//  Created by kent franks on 12/2/14.
+//  Created by Kent Franks on 12/4/14.
 //  Copyright (c) 2014 TheAppCodeLLC. All rights reserved.
 //
 
@@ -15,7 +15,7 @@
 @property (nonatomic, retain) NSString * customMessage;
 @property (nonatomic, retain) NSDate * fireDate;
 @property (nonatomic, retain) NSString * frequency;
-@property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSString * id;
 @property (nonatomic, retain) NSString * notes;
 
 @end

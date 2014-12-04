@@ -179,7 +179,7 @@
         // call save to perform the delete
         if (![self.managedObjectContext save:&error])
         {
-            NSLog(@"Problem deleting destination: %@", [error localizedDescription]);
+            NSLog(@"Problem deleting med: %@", [error localizedDescription]);
         }
     }
 }

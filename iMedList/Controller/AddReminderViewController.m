@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *customMessageTextField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *notifDatePicker;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *frequencySegmentedControl;
-@property (nonatomic, strong) NSNumber *notifID;
+@property (nonatomic, strong) NSString *notifID;
 @property (nonatomic, strong) NSMutableDictionary *notifDict;
 @end
 
@@ -51,6 +51,8 @@ bool allowsAlert;
     NSLog(@"%s", __PRETTY_FUNCTION__);
     [self setNotificationTypesAllowed];
     
+    _notifID = [[NSString alloc] initWithFormat:@"%f",[self.notifDatePicker.date timeIntervalSinceReferenceDate]];
+    
     // New for iOS 8 - Register the notifications
     UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
@@ -77,6 +79,9 @@ bool allowsAlert;
                     notification.repeatInterval = 0;
                     break;
             }
+            NSDictionary *userInfo = [NSDictionary dictionaryWithObject:_notifID forKey:@"notifId"];
+            notification.userInfo = userInfo;
+
         }
         if (allowsAlert)
         {
@@ -90,9 +95,6 @@ bool allowsAlert;
         {
             notification.soundName = UILocalNotificationDefaultSoundName;
         }
-        
-        // this will schedule the notification to fire at the fire date
-        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
     }
     
     // this will schedule the notification to fire at the fire date
@@ -118,7 +120,7 @@ bool allowsAlert;
     //populate the reminder object
     reminder.customMessage = self.customMessageTextField.text;
     reminder.fireDate = self.notifDatePicker.date;
-    reminder.id = [NSNumber numberWithDouble:[self.notifDatePicker.date timeIntervalSinceReferenceDate]];
+    reminder.id = _notifID;
     switch (_frequencySegmentedControl.selectedSegmentIndex)
     {
         case 0:

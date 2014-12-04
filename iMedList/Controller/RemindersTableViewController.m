@@ -134,17 +134,47 @@
 }
 */
 
-/*
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+    // check to see if want to delete
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        // get the reminder we want to delete using the indexPath
+        _reminder  = [_fetchedResultsController objectAtIndexPath:indexPath];
+        NSString *notifIdToDelete = [NSString stringWithFormat:@"%@", _reminder.id];
+        
+        // set the reminder to delete
+        // this will delete it from core data
+        [self.managedObjectContext deleteObject:_reminder];
+        NSError *error;
+        
+        // call save to perform the delete
+        if (![self.managedObjectContext save:&error])
+        {
+            NSLog(@"Problem deleting reminder: %@", [error localizedDescription]);
+        }
+        
+        // now delete from notification center
+        UIApplication *app = [UIApplication sharedApplication];
+        NSArray *notifArray = [app scheduledLocalNotifications];
+        for (int i=0; i<[notifArray count]; i++)
+        {
+            UILocalNotification *tempNotif = [notifArray objectAtIndex:i];
+            NSDictionary *userInfoCurrent = tempNotif.userInfo;
+            NSString *notifId=[NSString stringWithFormat:@"%@",[userInfoCurrent valueForKey:@"notifId"]];
+            if ([notifId isEqualToString:notifIdToDelete])
+            {
+                //Cancelling local notification
+                [app cancelLocalNotification:tempNotif];
+                break;
+            }
+        }
+    }
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

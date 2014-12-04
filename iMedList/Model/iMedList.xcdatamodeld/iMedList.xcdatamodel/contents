@@ -10,7 +10,7 @@
         <attribute name="customMessage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fireDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="frequency" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
