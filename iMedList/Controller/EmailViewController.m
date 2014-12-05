@@ -23,6 +23,47 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Retrieve user name from data.plist
+    NSError *error = nil;
+    NSPropertyListFormat format;
+    NSString *plistPath;
+    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                              NSUserDomainMask, YES) objectAtIndex:0];
+    plistPath = [rootPath stringByAppendingPathComponent:@"Data.plist"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
+        plistPath = [[NSBundle mainBundle] pathForResource:@"Data" ofType:@"plist"];
+    }
+    NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
+    NSDictionary *temp = (NSDictionary *)[NSPropertyListSerialization
+                                          propertyListWithData:plistXML options:0 format:&format error:&error];
+    if (!temp) {
+        NSLog(@"Error reading plist: %@", error.description);
+    }
+    if ([temp objectForKey:@"Name"])
+    {
+        self.sendersNameTextField.text = [temp objectForKey:@"Name"];
+
+    }
+}
+
+- (void) saveName
+{
+    NSError *error;
+    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *plistPath = [rootPath stringByAppendingPathComponent:@"Data.plist"];
+    NSDictionary *plistDict = [NSDictionary dictionaryWithObjects:
+                               [NSArray arrayWithObjects: self.sendersNameTextField.text, nil] forKeys:[NSArray arrayWithObjects: @"Name", nil]];
+    NSData *data = [NSPropertyListSerialization dataWithPropertyList:plistDict format:NSPropertyListXMLFormat_v1_0 options:0 error:&error];
+    
+    if(data)
+    {
+        [data writeToFile:plistPath atomically:YES];
+    }
+    else
+    {
+        NSLog(@"Error getting data: %@", error.description);
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +75,7 @@
 
 - (IBAction)sendEmail:(id)sender
 {
+    [self saveName];
     [self buildEmailBody];
     if ([MFMailComposeViewController canSendMail])
     {
@@ -42,7 +84,17 @@
         
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
         controller.navigationBar.barStyle = UIBarStyleBlack;
-        NSString *emailSubject = [[NSString alloc] initWithFormat:@"%@'s %@", self.sendersNameTextField.text, @"Medication List"];
+        
+        NSString *usersFullName = self.sendersNameTextField.text;
+        NSString *emailSubject = nil;
+        if([usersFullName hasSuffix:@"s"])
+        {
+            emailSubject = [[NSString alloc] initWithFormat:@"%@' %@", self.sendersNameTextField.text, @"Medication List"];
+        }
+        else
+        {
+            emailSubject = [[NSString alloc] initWithFormat:@"%@'s %@", self.sendersNameTextField.text, @"Medication List"];
+        }
         [controller setSubject:emailSubject];
         controller.mailComposeDelegate = self;
         [controller setMessageBody:self.emailBody isHTML:NO];
@@ -56,6 +108,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Your device is not set up for email." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
     }
+    [self.tabBarController setSelectedIndex:0];
 }
 
 - (void)buildEmailBody
@@ -74,6 +127,7 @@
     [self setMedsArray:mutableFetchResults];
     
     // create the email body
+    
     self.emailBody = [NSMutableString stringWithFormat:@"Medication list for %@:", self.sendersNameTextField.text];
     [self.emailBody appendString:@"\n"];
     [self.emailBody appendString:@"\n"];
@@ -91,6 +145,7 @@
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
+
     switch (result)
     {
         case MFMailComposeResultCancelled:
@@ -112,11 +167,12 @@
         }
             break;
     }
-    
     [self becomeFirstResponder];
     // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField
 {

@@ -40,7 +40,7 @@
     reminder.fireDate = [NSDate date];
     reminder.customMessage = @"Custom message for reminder";
     reminder.frequency = @"Daily";
-    reminder.id = [NSNumber numberWithDouble:[[NSDate date] timeIntervalSinceReferenceDate]];
+    reminder.id = [NSString stringWithFormat: @"%f", [[NSDate date] timeIntervalSinceReferenceDate]];
     // Save the context.
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {

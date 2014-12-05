@@ -12,6 +12,7 @@
 		37989BAC1A2E990100095C94 /* Med.m in Sources */ = {isa = PBXBuildFile; fileRef = 37989BAB1A2E990100095C94 /* Med.m */; };
 		AE5F13D91A30C6EF00E82FD6 /* iMedFullList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AE5F13D81A30C6EF00E82FD6 /* iMedFullList.sqlite */; };
 		AE5F13DC1A30D4DF00E82FD6 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5F13DB1A30D4DF00E82FD6 /* Reminder.m */; };
+		AE5F13E21A32129900E82FD6 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE5F13E11A32129900E82FD6 /* Data.plist */; };
 		AEA4B4271A2E4C04000AB0D5 /* iMedListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA4B4261A2E4C04000AB0D5 /* iMedListTests.m */; };
 		AEA4B4421A2E4E40000AB0D5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA4B4311A2E4E40000AB0D5 /* LaunchScreen.xib */; };
 		AEA4B4431A2E4E40000AB0D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEA4B4331A2E4E40000AB0D5 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		AE5F13D81A30C6EF00E82FD6 /* iMedFullList.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = iMedFullList.sqlite; sourceTree = SOURCE_ROOT; };
 		AE5F13DA1A30D4DF00E82FD6 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
 		AE5F13DB1A30D4DF00E82FD6 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
+		AE5F13E11A32129900E82FD6 /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
 		AEA4B4041A2E4C04000AB0D5 /* iMedList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMedList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA4B4201A2E4C04000AB0D5 /* iMedListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMedListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA4B4251A2E4C04000AB0D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				3734832A1A2FC35A004BBFA4 /* TPKeyboardAvoidingScrollView.h */,
 				3734832B1A2FC35A004BBFA4 /* TPKeyboardAvoidingScrollView.m */,
 				AEA4B43E1A2E4E40000AB0D5 /* main.m */,
+				AE5F13E11A32129900E82FD6 /* Data.plist */,
 			);
 			path = Supporting_Files;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEA4B4441A2E4E40000AB0D5 /* Images.xcassets in Resources */,
+				AE5F13E21A32129900E82FD6 /* Data.plist in Resources */,
 				AE5F13D91A30C6EF00E82FD6 /* iMedFullList.sqlite in Resources */,
 				AEA4B4421A2E4E40000AB0D5 /* LaunchScreen.xib in Resources */,
 				AEA4B4431A2E4E40000AB0D5 /* Main.storyboard in Resources */,

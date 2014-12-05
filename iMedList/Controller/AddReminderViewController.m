@@ -150,6 +150,9 @@ bool allowsAlert;
                                                otherButtonTitles: nil];
         [alert show];
     }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField
