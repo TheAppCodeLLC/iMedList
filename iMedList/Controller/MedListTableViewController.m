@@ -10,6 +10,7 @@
 #import "AddMedViewController.h"
 #import "Med.h"
 #import "EditMedViewController.h"
+#import "MedTableViewCell.h"
 
 @interface MedListTableViewController ()
 @property (nonatomic, strong) Med *med;
@@ -70,18 +71,20 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"medCell" forIndexPath:indexPath];
+    MedTableViewCell *cell = (MedTableViewCell *) [tableView dequeueReusableCellWithIdentifier:@"medCell" forIndexPath:indexPath];
     
-    // Configure the cell...
     // Configure the cell...
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(MedTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     self.med = [_fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = self.med.name;
+    cell.nameLabel.text = self.med.name;
+    cell.doseLabel.text = self.med.dose;
+    cell.frequencyLabel.text = self.med.frequency;
+    cell.noteLabel.text = self.med.notes;
 }
 
 

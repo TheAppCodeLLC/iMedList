@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3734832C1A2FC35B004BBFA4 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3734832B1A2FC35A004BBFA4 /* TPKeyboardAvoidingScrollView.m */; };
 		3734832F1A2FC469004BBFA4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3734832E1A2FC469004BBFA4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		376584CE1A33C728000EA3E8 /* MedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 376584CD1A33C728000EA3E8 /* MedTableViewCell.m */; };
 		37989BAC1A2E990100095C94 /* Med.m in Sources */ = {isa = PBXBuildFile; fileRef = 37989BAB1A2E990100095C94 /* Med.m */; };
 		AE5F13D91A30C6EF00E82FD6 /* iMedFullList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AE5F13D81A30C6EF00E82FD6 /* iMedFullList.sqlite */; };
 		AE5F13DC1A30D4DF00E82FD6 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5F13DB1A30D4DF00E82FD6 /* Reminder.m */; };
@@ -46,6 +47,8 @@
 		3734832B1A2FC35A004BBFA4 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		3734832D1A2FC469004BBFA4 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		3734832E1A2FC469004BBFA4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		376584CC1A33C728000EA3E8 /* MedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		376584CD1A33C728000EA3E8 /* MedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		37989BAA1A2E990100095C94 /* Med.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Med.h; sourceTree = "<group>"; };
 		37989BAB1A2E990100095C94 /* Med.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Med.m; sourceTree = "<group>"; };
 		AE5F13D81A30C6EF00E82FD6 /* iMedFullList.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = iMedFullList.sqlite; sourceTree = SOURCE_ROOT; };
@@ -206,6 +209,8 @@
 		AEA4B43F1A2E4E40000AB0D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				376584CC1A33C728000EA3E8 /* MedTableViewCell.h */,
+				376584CD1A33C728000EA3E8 /* MedTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				AEB1C7461A2E559600B631B7 /* EmailViewController.m in Sources */,
 				AEA4B4481A2E4E40000AB0D5 /* main.m in Sources */,
 				AEA4B4461A2E4E40000AB0D5 /* iMedList.xcdatamodeld in Sources */,
+				376584CE1A33C728000EA3E8 /* MedTableViewCell.m in Sources */,
 				AEB1C74C1A2E574E00B631B7 /* MedPickerViewController.m in Sources */,
 				AE5F13DC1A30D4DF00E82FD6 /* Reminder.m in Sources */,
 			);
