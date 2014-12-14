@@ -9,6 +9,8 @@
 #import "RemindersTableViewController.h"
 #import "AddReminderViewController.h"
 #import "Reminder.h"
+#import "ReminderTableViewCell.h"
+#import "ReminderTableView.h"
 
 @interface RemindersTableViewController ()
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
@@ -88,7 +90,7 @@
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self configureCell:(ReminderTableViewCell *)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
         case NSFetchedResultsChangeMove:
             [tableView deleteRowsAtIndexPaths:[NSArray
@@ -99,10 +101,16 @@
     }
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(ReminderTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     self.reminder = [_fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = self.reminder.customMessage;
+    cell.customTextLabel.text = self.reminder.customMessage;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MMMM dd yyy, hh:mm a"];
+    [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+    NSString *fireDate = [formatter stringFromDate:self.reminder.fireDate];
+    cell.fireDateLabel.text = fireDate;
+    cell.frequencyLabel.text = self.reminder.frequency;
 }
 
 #pragma mark - Table view data source
@@ -117,9 +125,9 @@
     return [[[_fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (ReminderTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reminderCell" forIndexPath:indexPath];
+    ReminderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reminderCell" forIndexPath:indexPath];
     
     // Configure the cell...
     [self configureCell:cell atIndexPath:indexPath];

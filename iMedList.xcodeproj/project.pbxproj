@@ -30,6 +30,8 @@
 		AEB1C7521A2E585F00B631B7 /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB1C7511A2E585F00B631B7 /* AddReminderViewController.m */; };
 		AEC67EF31A2F4BF000E74A6C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC67EF21A2F4BF000E74A6C /* libsqlite3.dylib */; };
 		AEC67EF51A2F6BCA00E74A6C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC67EF41A2F6BCA00E74A6C /* MessageUI.framework */; };
+		AEDA193B1A3D29E20052DD5E /* ReminderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDA193A1A3D29E20052DD5E /* ReminderTableViewCell.m */; };
+		AEDA193E1A3D341A0052DD5E /* ReminderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDA193D1A3D341A0052DD5E /* ReminderTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,10 @@
 		AEB1C7511A2E585F00B631B7 /* AddReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReminderViewController.m; sourceTree = "<group>"; };
 		AEC67EF21A2F4BF000E74A6C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		AEC67EF41A2F6BCA00E74A6C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		AEDA19391A3D29E20052DD5E /* ReminderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderTableViewCell.h; sourceTree = "<group>"; };
+		AEDA193A1A3D29E20052DD5E /* ReminderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderTableViewCell.m; sourceTree = "<group>"; };
+		AEDA193C1A3D341A0052DD5E /* ReminderTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderTableView.h; sourceTree = "<group>"; };
+		AEDA193D1A3D341A0052DD5E /* ReminderTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,10 @@
 			children = (
 				376584CC1A33C728000EA3E8 /* MedTableViewCell.h */,
 				376584CD1A33C728000EA3E8 /* MedTableViewCell.m */,
+				AEDA19391A3D29E20052DD5E /* ReminderTableViewCell.h */,
+				AEDA193A1A3D29E20052DD5E /* ReminderTableViewCell.m */,
+				AEDA193C1A3D341A0052DD5E /* ReminderTableView.h */,
+				AEDA193D1A3D341A0052DD5E /* ReminderTableView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,9 +339,11 @@
 				AEA4B4471A2E4E40000AB0D5 /* AppDelegate.m in Sources */,
 				AEB1C7461A2E559600B631B7 /* EmailViewController.m in Sources */,
 				AEA4B4481A2E4E40000AB0D5 /* main.m in Sources */,
+				AEDA193B1A3D29E20052DD5E /* ReminderTableViewCell.m in Sources */,
 				AEA4B4461A2E4E40000AB0D5 /* iMedList.xcdatamodeld in Sources */,
 				376584CE1A33C728000EA3E8 /* MedTableViewCell.m in Sources */,
 				AEB1C74C1A2E574E00B631B7 /* MedPickerViewController.m in Sources */,
+				AEDA193E1A3D341A0052DD5E /* ReminderTableView.m in Sources */,
 				AE5F13DC1A30D4DF00E82FD6 /* Reminder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
