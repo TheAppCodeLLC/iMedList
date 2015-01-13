@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="266" y="-425"/>
         </scene>
-        <!--Med List Table View Controller-->
+        <!--Meds-->
         <scene sceneID="sWj-N4-dyv">
             <objects>
                 <tableViewController id="Gfm-Sy-alu" customClass="MedListTableViewController" sceneMemberID="viewController">
@@ -78,7 +78,7 @@
                             <outlet property="delegate" destination="Gfm-Sy-alu" id="pR0-bS-9xL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="5ch-Gi-VWj">
+                    <navigationItem key="navigationItem" title="Meds" id="5ch-Gi-VWj">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6kd-oG-ygM">
                             <connections>
                                 <segue destination="PY2-Sp-L3f" kind="show" identifier="addMed" id="cJR-nE-aft"/>
@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="1790" y="-1095"/>
         </scene>
-        <!--Edit Med View Controller-->
+        <!--Edit Med-->
         <scene sceneID="N91-xt-GsN">
             <objects>
-                <viewController id="iZU-qk-b1i" customClass="EditMedViewController" sceneMemberID="viewController">
+                <viewController title="Edit Med" id="iZU-qk-b1i" customClass="EditMedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NVE-M4-rnd"/>
                         <viewControllerLayoutGuide type="bottom" id="w1W-IZ-0l8"/>
@@ -201,10 +201,10 @@
             </objects>
             <point key="canvasLocation" x="2640" y="-1095"/>
         </scene>
-        <!--Add Med View Controller-->
+        <!--Add Med-->
         <scene sceneID="oRe-TE-ZMV">
             <objects>
-                <viewController id="PY2-Sp-L3f" customClass="AddMedViewController" sceneMemberID="viewController">
+                <viewController title="Add Med" id="PY2-Sp-L3f" customClass="AddMedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GbN-Wx-Odb"/>
                         <viewControllerLayoutGuide type="bottom" id="jbG-fL-xgg"/>
@@ -312,10 +312,10 @@
             </objects>
             <point key="canvasLocation" x="2640" y="-1787"/>
         </scene>
-        <!--Med Picker View Controller-->
+        <!--Med Picker-->
         <scene sceneID="OIz-1x-LwI">
             <objects>
-                <viewController id="eZ3-ix-X8w" customClass="MedPickerViewController" sceneMemberID="viewController">
+                <viewController title="Med Picker" id="eZ3-ix-X8w" customClass="MedPickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dAU-FX-eCL"/>
                         <viewControllerLayoutGuide type="bottom" id="Lyg-GN-LSc"/>
@@ -325,14 +325,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3a-Pq-NJy">
-                                <rect key="frame" x="0.0" y="20" width="333" height="162"/>
+                                <rect key="frame" x="0.0" y="88" width="333" height="162"/>
                                 <connections>
                                     <outlet property="dataSource" destination="eZ3-ix-X8w" id="RDb-dr-lS9"/>
                                     <outlet property="delegate" destination="eZ3-ix-X8w" id="RmS-vx-oqM"/>
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvA-PE-hDi">
-                                <rect key="frame" x="143" y="211" width="46" height="30"/>
+                                <rect key="frame" x="143" y="279" width="46" height="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -340,6 +340,12 @@
                                     <action selector="goBackToAddMedView:" destination="eZ3-ix-X8w" eventType="touchUpInside" id="07s-Bw-xcT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick a Med" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgx-8e-ltO">
+                                <rect key="frame" x="41" y="28" width="250" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -348,7 +354,7 @@
             </objects>
             <point key="canvasLocation" x="3358" y="-1787"/>
         </scene>
-        <!--Reminders Table View Controller-->
+        <!--Reminders-->
         <scene sceneID="fRU-Zj-gLx">
             <objects>
                 <tableViewController id="3rV-PO-28u" customClass="RemindersTableViewController" sceneMemberID="viewController">
@@ -394,7 +400,7 @@
                             <outlet property="delegate" destination="3rV-PO-28u" id="uho-aJ-sXy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="feD-ku-VXM">
+                    <navigationItem key="navigationItem" title="Reminders" id="feD-ku-VXM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tez-Dd-s7S">
                             <connections>
                                 <segue destination="ETW-OQ-SdO" kind="show" identifier="addReminder" id="XA0-nG-j2U"/>
@@ -406,10 +412,10 @@
             </objects>
             <point key="canvasLocation" x="1790" y="-431"/>
         </scene>
-        <!--Add Reminder View Controller-->
+        <!--Add Reminder-->
         <scene sceneID="79i-5Q-hVA">
             <objects>
-                <viewController id="ETW-OQ-SdO" customClass="AddReminderViewController" sceneMemberID="viewController">
+                <viewController title="Add Reminder" id="ETW-OQ-SdO" customClass="AddReminderViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qkI-vm-6sj"/>
                         <viewControllerLayoutGuide type="bottom" id="pXr-L9-Qv2"/>
@@ -527,7 +533,7 @@
         <!--Email-->
         <scene sceneID="Sa1-hG-Ag6">
             <objects>
-                <viewController id="noI-QD-iFk" customClass="EmailViewController" sceneMemberID="viewController">
+                <viewController title="Email" id="noI-QD-iFk" customClass="EmailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zCY-wC-xNp"/>
                         <viewControllerLayoutGuide type="bottom" id="RHE-V3-sKb"/>
@@ -540,13 +546,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send To:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkJ-3f-jK3">
-                                        <rect key="frame" x="27" y="36" width="179" height="21"/>
+                                        <rect key="frame" x="27" y="114" width="179" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="recipients email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jCB-fm-NC4">
-                                        <rect key="frame" x="27" y="65" width="279" height="30"/>
+                                        <rect key="frame" x="27" y="143" width="279" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         <connections>
@@ -554,13 +560,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sent From:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOc-uu-PwT">
-                                        <rect key="frame" x="27" y="136" width="179" height="21"/>
+                                        <rect key="frame" x="27" y="214" width="179" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sJG-5p-fJV">
-                                        <rect key="frame" x="27" y="165" width="279" height="30"/>
+                                        <rect key="frame" x="27" y="243" width="279" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -568,7 +574,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kw6-D2-FIZ">
-                                        <rect key="frame" x="116" y="219" width="101" height="30"/>
+                                        <rect key="frame" x="116" y="297" width="101" height="30"/>
                                         <state key="normal" title="Create Email">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -576,6 +582,12 @@
                                             <action selector="sendEmail:" destination="noI-QD-iFk" eventType="touchUpInside" id="R7I-GX-yNl"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSW-u1-btW">
+                                        <rect key="frame" x="125" y="24" width="83" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </scrollView>
                         </subviews>
